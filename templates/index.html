@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .card {
+            margin: 1rem;
+            border-radius: 2rem;
+            /* background-color: #fefefe; */
+        }
+        .card img {
+            border-top-right-radius: 2rem;
+            border-top-left-radius: 2rem;
+            max-height: 350px;
+            width: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+        .card .info {
+            font-weight: 600;
+            line-height: 100%;
+            padding: 10px 15px 0 15px;
+        }
+    </style>
+    <title>Movies Django App</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light px-4">
+        <a class="navbar-brand" href="#">Movies Django App</a>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            {% for d in data %}
+            <div class="col-md-3 col-sm-12">
+                <div class="card">
+                    <img src="{{d.poster}}" class="img-fluid" alt="">
+                    <div class="info">
+                        <p>{{d.title}} ({{d.year}})</p>
+                        <p>{{d.type}} | {{d.imdb_id}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
